@@ -76,8 +76,8 @@ function validateInput(regex, element) {
 
 function openWindow(source) {
     // window.open(source, '_self');
-    // window.location.assign(source);
-    window.location.replace('https://' + location.hostname + source);
+    window.location.assign(source);
+    // window.location.replace('https://' + location.hostname + source);
 }
 
 
