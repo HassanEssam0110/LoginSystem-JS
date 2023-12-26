@@ -27,9 +27,6 @@ const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
 
 
-
-
-// to get base url (localhost)
 // var pathparts = location.pathname.split('/');
 // var baseURL = ''
 // for (var i = 0; i < pathparts.length - 1; i++) {
@@ -39,9 +36,9 @@ const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
 
 
 
-if (window.location.pathname === '/home.html') {
+if (window.location.pathname === '../../home.html') {
     if (currentUser.logged === false) {
-        openWindow('/index.html');
+        openWindow('../../index.html');
     } else {
         sayWelcome();
     }
@@ -113,7 +110,7 @@ function singup() {
 
         users.push(newUser); // add to user list
         setToLocalStorage('users', users); // add to local storage
-        openWindow('/index.html'); // open login window
+        openWindow('../../index.html'); // open login window
     }
 };
 
@@ -138,7 +135,7 @@ function login() {
         currentUser.name = userFounded.name;
         currentUser.logged = true;
         setToLocalStorage('currentUser', currentUser); // add to local storage
-        openWindow('/home.html'); // open login window
+        openWindow('../../home.html'); // open login window
     }
 }
 
