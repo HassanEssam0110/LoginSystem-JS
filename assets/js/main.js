@@ -30,21 +30,19 @@ const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
 
 
 // to get base url (localhost)
-var pathparts = location.pathname.split('/');
-var baseURL = ''
-for (var i = 0; i < pathparts.length - 1; i++) {
-    baseURL += '/' + pathparts[i]
-}
-console.log(baseURL);
+// var pathparts = location.pathname.split('/');
+// var baseURL = ''
+// for (var i = 0; i < pathparts.length - 1; i++) {
+//     baseURL += '/' + pathparts[i]
+// }
+// console.log(baseURL);
 
 
 
 if (window.location.pathname === '/home.html') {
     if (currentUser.logged === false) {
-        toggleClass(home, 'd-none', !currentUser.logged);
         openWindow('/index.html');
     } else {
-        toggleClass(home, 'd-none', !currentUser.logged);
         sayWelcome();
     }
 }
@@ -75,8 +73,8 @@ function validateInput(regex, element) {
 }
 
 function openWindow(source) {
-    // window.open(source, '_self');
-    window.location.assign(source);
+    window.open(source, '_self');
+    // window.location.assign(source);
     // window.location.replace('https://' + location.hostname + source);
 }
 
