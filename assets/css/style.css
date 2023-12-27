@@ -1,12 +1,25 @@
 :root {
-  --color-main: #24353f;
+  --color-main: #17a2b8;
+  /* --color-sec: #17a2b8; */
+
+  --color-success: #5cb85c;
+  --color-danger: #e33049;
+  --color-warning: #ffc107;
 
   --color-font-main: #fff;
   --color-font-sec: #eff3f6;
 
-  /* --font-logo: "Pacifico", cursive; */
+  --color-border: #888;
+  --color-border-form: #ffffff33;
+
   --font-main: "Quicksand", sans-serif;
   --font-head: "Righteous", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: var(--font-head);
+  color: var(--color-font-main);
 }
 a {
   text-decoration: none;
@@ -14,10 +27,9 @@ a {
 
 body {
   color: var(--color-font-main);
-  /* background: linear-gradient(-45deg, #000, #040a2f, #0c2354, #073e78, #fff); */
-
   font-family: var(--font-main);
 }
+
 body:has(#loginForm),
 body:has(#singupForm) {
   background-image: linear-gradient(
@@ -31,23 +43,18 @@ body:has(#singupForm) {
   animation: moveSky 60s linear infinite;
 }
 
-h1,
-h2 {
-  font-family: var(--font-head);
-  color: var(--color-font-main);
-}
-
-/* ?========== Start login ==========*/
+/* ?========== Start Form ==========*/
 #loginForm,
 #singupForm {
   animation: fadeIn 2s ease-in-out;
 }
+
 .icon-avater {
   font-size: 6.25rem;
   padding: 7px;
   color: var(--color-font-main);
   border-radius: 50%;
-  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+  border: 1px solid var(--color-border-form);
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.7),
@@ -61,12 +68,11 @@ h2 {
 form {
   width: 75%;
   max-width: 500px;
-  /* background: rgba(255, 255, 255, 0.1); */
   background: rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   box-shadow: -5px 2px 15px -9px rgba(0, 0, 0, 1);
   backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-border-form);
 }
 form .input-cont .form-control {
   color: var(--color-font-main);
@@ -74,7 +80,7 @@ form .input-cont .form-control {
 }
 form .input-cont .form-control:focus {
   background-color: transparent;
-  border-color: #17a2b8;
+  border-color: var(--color-main);
   outline: 0;
   box-shadow: none;
 }
@@ -95,13 +101,13 @@ form .form-control::placeholder {
   transform: translateY(-50%);
 }
 
-form .btn-login {
-  --bs-btn-color: #17a2b8;
+form .btn-form {
+  --bs-btn-color: var(--color-main);
   --bs-btn-bg: transparent;
-  --bs-btn-border-color: #17a2b8;
+  --bs-btn-border-color: var(--color-main);
   --bs-btn-hover-color: var(--color-font-main);
-  --bs-btn-hover-bg: #17a2b8;
-  --bs-btn-hover-border-color: #17a2b8;
+  --bs-btn-hover-bg: var(--color-main);
+  --bs-btn-hover-border-color: var(--color-main);
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: var(--color-font-main);
   --bs-btn-active-bg: #1490a3;
@@ -109,7 +115,7 @@ form .btn-login {
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
-form .btn-login:active {
+form .btn-form:active {
   transform: scale(0.98);
 }
 
@@ -117,7 +123,7 @@ form .login-ask {
   font-size: 14px;
 }
 form .login-ask a {
-  color: #17a2b8;
+  color: var(--color-main);
   transition: color 0.3s;
 }
 form .login-ask a:hover {
@@ -126,25 +132,25 @@ form .login-ask a:hover {
 
 .form-control.is-valid,
 .was-validated .form-control:valid {
-  border-color: #5cb85c;
+  border-color: var(--color-success);
   background-image: none;
 }
 
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
-  border-color: #e33049;
+  border-color: var(--color-danger);
   background-image: none;
 }
 
 .valid-feedback {
-  color: #5cb85c;
+  color: var(--color-success);
 }
 .invalid-feedback,
 .invalid-auth {
-  color: #e33049;
+  color: var(--color-danger);
 }
 
-/* ? start home-section */
+/* ?========== Start Home ==========*/
 .bg-custom {
   background-image: linear-gradient(
       to bottom,
@@ -157,7 +163,7 @@ form .login-ask a:hover {
   background-size: cover;
 }
 .navbar {
-  border-bottom: 0.5px solid #888;
+  border-bottom: 0.5px solid var(--color-border);
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 0 0 30px 30px;
 }
@@ -182,14 +188,14 @@ form .login-ask a:hover {
   color: var(--color-font-main);
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 50%;
-  border: 1px solid #888;
+  border: 1px solid var(--color-border);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
 }
 .user-name span {
-  color: #ffc107;
+  color: var(--color-warning);
 }
 /* *=============== Start Animation =============== */
 @keyframes moveSky {

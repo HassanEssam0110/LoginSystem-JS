@@ -26,22 +26,9 @@ const namePattern = /^[a-zA-Z]{3,20}$/
 const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
 
-
-// var pathparts = location.pathname.split('/');
-// var baseURL = ''
-// for (var i = 0; i < pathparts.length - 1; i++) {
-//     baseURL += '/' + pathparts[i]
-// }
-// console.log(baseURL);
-
-
-
+// handle home page & welcome text
 if (window.location.pathname === '/LoginSystem-JS/home.html') {
-    if (currentUser.logged === false) {
-        openWindow('index.html');
-    } else {
-        sayWelcome();
-    }
+    currentUser.logged === false ? openWindow('index.html') : sayWelcome();
 }
 
 // ^=============== JS FUNCTIONS HELPERS ===============
